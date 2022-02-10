@@ -26,7 +26,7 @@ struct ContentView: View {
             Text("Energy loss")
                 .font(.callout)
                 .bold()
-            TextField("# loss", text: $placeholderString)
+            TextField("% loss", text: $placeholderString)
                 .padding()
         }
         
@@ -50,7 +50,7 @@ struct ContentView: View {
             Text("Percent Escaped")
                 .font(.callout)
                 .bold()
-            TextField("# Absorbed", text: $placeholderString)
+            TextField("% Escaped", text: $placeholderString)
                 .padding()
         }
         
