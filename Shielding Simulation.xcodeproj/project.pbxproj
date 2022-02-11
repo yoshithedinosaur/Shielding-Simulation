@@ -21,6 +21,10 @@
 		A3FA423927B5C78300ADDF0F /* NeutronClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FA423727B5C78200ADDF0F /* NeutronClass.swift */; };
 		A3FA423B27B5C79B00ADDF0F /* RandomWalk.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FA423A27B5C79B00ADDF0F /* RandomWalk.swift */; };
 		A3FA423C27B5C79B00ADDF0F /* RandomWalk.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FA423A27B5C79B00ADDF0F /* RandomWalk.swift */; };
+		A3FA423E27B608BB00ADDF0F /* SimulateShielding.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FA423D27B608BB00ADDF0F /* SimulateShielding.swift */; };
+		A3FA423F27B608BB00ADDF0F /* SimulateShielding.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FA423D27B608BB00ADDF0F /* SimulateShielding.swift */; };
+		A3FA424727B704BE00ADDF0F /* DrawingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FA424627B704BE00ADDF0F /* DrawingView.swift */; };
+		A3FA424827B704BE00ADDF0F /* DrawingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FA424627B704BE00ADDF0F /* DrawingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +59,8 @@
 		A3FA422127B5C3B700ADDF0F /* Tests_macOSLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOSLaunchTests.swift; sourceTree = "<group>"; };
 		A3FA423727B5C78200ADDF0F /* NeutronClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeutronClass.swift; sourceTree = "<group>"; };
 		A3FA423A27B5C79B00ADDF0F /* RandomWalk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomWalk.swift; sourceTree = "<group>"; };
+		A3FA423D27B608BB00ADDF0F /* SimulateShielding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulateShielding.swift; sourceTree = "<group>"; };
+		A3FA424627B704BE00ADDF0F /* DrawingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +113,8 @@
 				A3FA41FC27B5C3B400ADDF0F /* ContentView.swift */,
 				A3FA423727B5C78200ADDF0F /* NeutronClass.swift */,
 				A3FA423A27B5C79B00ADDF0F /* RandomWalk.swift */,
+				A3FA423D27B608BB00ADDF0F /* SimulateShielding.swift */,
+				A3FA424627B704BE00ADDF0F /* DrawingView.swift */,
 				A3FA41FD27B5C3B700ADDF0F /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -307,8 +315,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3FA423E27B608BB00ADDF0F /* SimulateShielding.swift in Sources */,
 				A3FA422527B5C3B700ADDF0F /* ContentView.swift in Sources */,
 				A3FA423827B5C78300ADDF0F /* NeutronClass.swift in Sources */,
+				A3FA424727B704BE00ADDF0F /* DrawingView.swift in Sources */,
 				A3FA422327B5C3B700ADDF0F /* Shielding_SimulationApp.swift in Sources */,
 				A3FA423B27B5C79B00ADDF0F /* RandomWalk.swift in Sources */,
 			);
@@ -318,8 +328,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3FA423F27B608BB00ADDF0F /* SimulateShielding.swift in Sources */,
 				A3FA422627B5C3B700ADDF0F /* ContentView.swift in Sources */,
 				A3FA423927B5C78300ADDF0F /* NeutronClass.swift in Sources */,
+				A3FA424827B704BE00ADDF0F /* DrawingView.swift in Sources */,
 				A3FA422427B5C3B700ADDF0F /* Shielding_SimulationApp.swift in Sources */,
 				A3FA423C27B5C79B00ADDF0F /* RandomWalk.swift in Sources */,
 			);
