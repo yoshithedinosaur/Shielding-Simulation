@@ -68,9 +68,28 @@ struct ContentView: View {
                     TextField("% Escaped", text: $percentEscString)
                         .padding()
                 }
+                
+                Button("Calculate", action: {Task.init{await self.calculateShielding()}})
+                    .padding()
+                    .disabled(simulated.enableButton == false)
+                
+                Button("Clear", action: {self.clear()})
+                    .padding(.bottom, 5.0)
+                    .disabled(simulated.enableButton == false)
+                
+                if (!simulated.enableButton){
+                    
+                    ProgressView()
+                }
             }
         
-            DrawingView()
+//            DrawingView(particlePaths: $simulated.positionData)
+//                .padding()
+//                .aspectRatio(1, contentMode: .fit)
+//                .drawingGroup()
+//            Spacer()
+            
+            DrawingView(particleEndPositions: $simulated.endPointsData)
                 .padding()
                 .aspectRatio(1, contentMode: .fit)
                 .drawingGroup()
@@ -80,12 +99,39 @@ struct ContentView: View {
     }
     
     
-    func calcualteShielding() async {
-        for numberOfNeutrons in 1...Int(numberOfNeutronsString)! {
-            await simulated.simulateShielding(initialPosition: (0,Double(heightOfBeamString)!))
+    func calculateShielding() async {
+        
+        simulated.setButtonEnable(state: false)
+        
+        simulated.percentAbsorption = Double(energyLossString)!
+        simulated.xWallBoundaries = [0.0,5.0]
+        simulated.yWallBoundaries = [0.0,5.0]
+        
+        for _ in 1...Int(numberOfNeutronsString)! {
+            await simulated.calculateSimulation(initialPosition: (0,Double(heightOfBeamString)!))
         }
-        numberEscapedString
-        numberAbsorbedString
+        numberEscapedString = simulated.escapeCountString
+        numberAbsorbedString = simulated.absorbCountString
+        
+        let percentEscaped = Double(numberEscapedString)! / Double(numberOfNeutronsString)!
+        
+        percentEscString = "\(percentEscaped)"
+        
+        
+        simulated.setButtonEnable(state: true)
+    }
+    
+    
+    func clear(){
+        
+        numberAbsorbedString = ""
+        numberEscapedString = ""
+        percentEscString =  ""
+        simulated.escapeCount = 0
+        simulated.absorbCount = 0
+        simulated.positionData = []
+        simulated.endPointsData = []
+        
     }
 
 }
