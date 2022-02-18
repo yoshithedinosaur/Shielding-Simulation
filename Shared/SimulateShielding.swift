@@ -63,7 +63,9 @@ class SimulateShielding: NSObject, ObservableObject {
                 
                 energyRemaining = 0.0
                 if (newPosition.xPosition >= xWallBoundaries[1] || newPosition.yPosition <= yWallBoundaries[0] || newPosition.yPosition >= yWallBoundaries[1]){
-                    escapeCount += 1
+                    escapeCount += 1 //For out of bound on top, bottom, and right of wall
+                } else {
+                    absorbCount += 1 //Back scatter counts as absorbed
                 }
                 
             } else if (energyRemaining > 0.0){
@@ -71,7 +73,7 @@ class SimulateShielding: NSObject, ObservableObject {
                 stepNumber += 1
                 energyRemaining = particle.energyLoss(energyBefore: energyRemaining, percentAbsorption: percentAbsorption)
                 if (energyRemaining <= 0.0) {
-                    absorbCount += 1
+                    absorbCount += 1 //Particle energy reaches 0
                 }
                 
             }
